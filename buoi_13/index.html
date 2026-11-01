@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buổi 13</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <main class="max-w-5xl mx-auto p-4 md:p-8">
+      <h1 class="text-3xl font-bold text-center text-yellow-500 mb-8">
+        Bài tập về nhà
+      </h1>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- quản lý tuyển sinh -->
+        <section class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Quản lý tuyển sinh</h2>
+          <div class="space-y-3">
+            <div>
+              <label for="ts-chuan" class="block mb-1 text-sm font-medium"
+                >Điểm chuẩn</label
+              >
+              <input
+                type="number"
+                id="ts-chuan"
+                step="0.25"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+              <div>
+                <label for="ts-m1" class="block mb-1 text-sm font-medium"
+                  >Môn 1</label
+                >
+                <input
+                  type="number"
+                  id="ts-m1"
+                  step="0.25"
+                  class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+                />
+              </div>
+              <div>
+                <label for="ts-m2" class="block mb-1 text-sm font-medium"
+                  >Môn 2</label
+                >
+                <input
+                  type="number"
+                  id="ts-m2"
+                  step="0.25"
+                  class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+                />
+              </div>
+              <div>
+                <label for="ts-m3" class="block mb-1 text-sm font-medium"
+                  >Môn 3</label
+                >
+                <input
+                  type="number"
+                  id="ts-m3"
+                  step="0.25"
+                  class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label for="ts-khuvuc" class="block mb-1 text-sm font-medium"
+                  >Khu vực</label
+                >
+                <select
+                  id="ts-khuvuc"
+                  class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+                >
+                  <option value="X">X (không ưu tiên)</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                </select>
+              </div>
+              <div>
+                <label for="ts-doituong" class="block mb-1 text-sm font-medium"
+                  >Đối tượng</label
+                >
+                <select
+                  id="ts-doituong"
+                  class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+                >
+                  <option value="0">0 (không ưu tiên)</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <button
+              id="ts-btn"
+              type="button"
+              class="text-white bg-yellow-500 hover:bg-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5"
+            >
+              Xem kết quả
+            </button>
+            <div id="ts-kq" class="text-sm font-medium"></div>
+          </div>
+        </section>
+
+        <!--tính tiền điện -->
+        <section class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Tính tiền điện</h2>
+          <div class="space-y-3">
+            <div>
+              <label for="dien-ten" class="block mb-1 text-sm font-medium"
+                >Tên</label
+              >
+              <input
+                type="text"
+                id="dien-ten"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div>
+              <label for="dien-kw" class="block mb-1 text-sm font-medium"
+                >Số kW tiêu thụ</label
+              >
+              <input
+                type="number"
+                id="dien-kw"
+                min="0"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <button
+              id="dien-btn"
+              type="button"
+              class="text-white bg-yellow-500 hover:bg-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5"
+            >
+              Tính tiền điện
+            </button>
+            <div id="dien-kq" class="text-sm font-medium"></div>
+          </div>
+        </section>
+
+        <!-- tính TNCN -->
+        <section class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Tính thuế thu nhập cá nhân</h2>
+          <div class="space-y-3">
+            <div>
+              <label for="thue-ten" class="block mb-1 text-sm font-medium"
+                >Họ tên</label
+              >
+              <input
+                type="text"
+                id="thue-ten"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div>
+              <label for="thue-thunhap" class="block mb-1 text-sm font-medium"
+                >Tổng thu nhập năm (triệu đồng)</label
+              >
+              <input
+                type="number"
+                id="thue-thunhap"
+                min="0"
+                step="any"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div>
+              <label for="thue-phuthuoc" class="block mb-1 text-sm font-medium"
+                >Số người phụ thuộc</label
+              >
+              <input
+                type="number"
+                id="thue-phuthuoc"
+                min="0"
+                step="1"
+                value="0"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <button
+              id="thue-btn"
+              type="button"
+              class="text-white bg-yellow-500 hover:bg-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5"
+            >
+              Tính thuế
+            </button>
+            <div id="thue-kq" class="text-sm font-medium"></div>
+          </div>
+        </section>
+
+        <!--tính tiền cáp -->
+        <section class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold mb-4">Tính tiền cáp</h2>
+          <div class="space-y-3">
+            <div>
+              <label for="cap-ma" class="block mb-1 text-sm font-medium"
+                >Mã khách hàng</label
+              >
+              <input
+                type="text"
+                id="cap-ma"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div>
+              <label for="cap-loai" class="block mb-1 text-sm font-medium"
+                >Loại khách hàng</label
+              >
+              <select
+                id="cap-loai"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              >
+                <option value="">-- Chọn loại khách hàng --</option>
+                <option value="nhadan">Nhà dân</option>
+                <option value="doanhnghiep">Doanh nghiệp</option>
+              </select>
+            </div>
+            <div id="cap-ketnoi-wrap" class="hidden">
+              <label for="cap-ketnoi" class="block mb-1 text-sm font-medium"
+                >Số kết nối</label
+              >
+              <input
+                type="number"
+                id="cap-ketnoi"
+                min="0"
+                step="1"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div>
+              <label for="cap-kenh" class="block mb-1 text-sm font-medium"
+                >Số kênh cao cấp</label
+              >
+              <input
+                type="number"
+                id="cap-kenh"
+                min="0"
+                step="1"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <button
+              id="cap-btn"
+              type="button"
+              class="text-white bg-yellow-500 hover:bg-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5"
+            >
+              Tính hóa đơn
+            </button>
+            <div id="cap-kq" class="text-sm font-medium"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
